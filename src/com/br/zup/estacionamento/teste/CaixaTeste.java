@@ -1,6 +1,7 @@
 package com.br.zup.estacionamento.teste;
 
 import java.util.Calendar;
+import java.util.Scanner;
 
 import com.br.zup.estacionamento.modelo.Caixa;
 import com.br.zup.estacionamento.modelo.Carro;
@@ -9,16 +10,31 @@ public class CaixaTeste {
 
 	
 	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		
 		Caixa caixa = new Caixa();
 		Carro carroZup  = new Carro();
 		
 		Calendar calendario = Calendar.getInstance();
-		calendario.set(Calendar.DAY_OF_MONTH, 9);
-		calendario.set(Calendar.MONTH, 5);
-		calendario.set(Calendar.YEAR, 2019);
-		calendario.set(Calendar.HOUR_OF_DAY, 13);
-		calendario.set(Calendar.MINUTE, 22);
-		calendario.set(Calendar.SECOND, 10);
+		
+		System.out.println("Que dia do mês você entrou? ");
+		calendario.set(Calendar.DAY_OF_MONTH, entrada.nextInt());
+		
+		System.out.println("Que mês você entrou?");
+		calendario.set(Calendar.MONTH, entrada.nextInt());
+		
+		System.out.println("Que ano você entrou?");
+		calendario.set(Calendar.YEAR, entrada.nextInt());
+		
+		System.out.println("Qual a hora que você entrou? ");
+		calendario.set(Calendar.HOUR_OF_DAY, entrada.nextInt());
+		
+		System.out.println("Que minuto você entrou? ");
+		calendario.set(Calendar.MINUTE, entrada.nextInt());
+		
+		System.out.println("Qual o segundo você entrou? ");
+		calendario.set(Calendar.SECOND, entrada.nextInt());
+		
 		calendario.set(Calendar.MILLISECOND, 0);
 		
 		carroZup.setEntrada(calendario.getTime());

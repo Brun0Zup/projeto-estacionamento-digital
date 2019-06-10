@@ -1,12 +1,30 @@
 package com.br.zup.estacionamento.modelo;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Scanner;
 
 //teste
 public class Sistema {
 
 	public static void main(String[] args) {
+	
+		
+		List<Cadastrados> cadastradosEstacionamento = new ArrayList<Cadastrados>();
+		int controle = 1;
+		while (controle == 1) {
+			Scanner scan = entrada();
+			Scanner scan1 = entrada();
+			
+			System.out.println("(1) Deseja adicionar um carro/n " + "(2) Deseja adicionar uma moto/n");
+			int opcao = scan.nextInt();
+			
+			if(opcao == 1) {
+				
+			}
+		}
+		
 		
 		//Criar carro
 		Carro carZup = new Carro();
@@ -86,4 +104,9 @@ public class Sistema {
 		
 		sc.close();
 	}	
+	
+	 public static Scanner entrada() {
+	 Scanner scan = new Scanner(System.in);
+	 return scan;
+	}
 }
